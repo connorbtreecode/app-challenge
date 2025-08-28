@@ -9,9 +9,27 @@
 </svelte:head>
 
 <nav>
-	<p>Navigation</p>
 	<a href="/">Calender</a>
 	<a href="/list">List</a>
 </nav>
 
 {@render children?.()}
+
+<style>
+	nav{
+		background-color: grey;
+		font-size: 32px;
+		display: flex;
+		justify-content: space-around;
+		position: relative;
+		top: 0px;
+		right: 0px;
+		left: 0px;
+		height: 64px;
+		align-items: center;
+	}
+	a{
+		text-decoration: none;
+		color: black;
+	}
+</style>
