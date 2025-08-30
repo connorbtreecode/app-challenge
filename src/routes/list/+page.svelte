@@ -12,7 +12,7 @@
 
 	let newTodoText = $state('');
 	let newTodoDate = $state('');
-	let keyNumber = 0; 
+	//let keyNumber = 0; 
 	// function setLocalStorageItem(eventObj) {
 	// 	// if(localStorage.getItem("keyCount") !== null) {
 	// 		// keyNumber = localStorage.getItem("keyCount");

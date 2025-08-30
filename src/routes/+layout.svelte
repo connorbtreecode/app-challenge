@@ -32,4 +32,8 @@
 		text-decoration: none;
 		color: black;
 	}
+	:global(body) {
+		margin: 0px; 
+		padding: 0px;
+	}
 </style>

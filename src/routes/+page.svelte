@@ -9,7 +9,8 @@
 			todos = JSON.parse(localStorage.getItem("todos"));
 		}
 	})
-	let days = ['su', 'm', 't', 'w', 'th', 'f', 's'];
+	let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+	
 </script>
 
 <div>
@@ -34,6 +35,7 @@
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
 		grid-auto-rows: 60px;
+		min-height: 100vh;
 	}
 
 	.calendar > div {
