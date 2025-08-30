@@ -1,11 +1,15 @@
 <script>
+	import { onMount } from "svelte";
+
+
+	let todos = $state([]);
+
+	onMount(() => {
+		if(localStorage.getItem("todos")) {
+			todos = JSON.parse(localStorage.getItem("todos"));
+		}
+	})
 	let days = ['su', 'm', 't', 'w', 'th', 'f', 's'];
-	let todos = $state([
-		{ date: '2025/08/25', eventName: 'bday party' },
-		{ date: '2025/08/27', eventName: 'soccer practice' },
-		{ date: '2025/08/29', eventName: 'LAN party' },
-		{ date: '2025/08/29', eventName: 'trip to SD' }
-	]);
 </script>
 
 <div>
@@ -17,7 +21,7 @@
 		{#each new Array(31).fill(0) as day, i}
 			<div>
 				{i + 1}
-				{#each todos.filter((v) => v.date.split('/')[2] == i + 1) as v, i}
+				{#each todos.filter((v) => v.date.split('-')[2] == i + 1) as v, i}
 					<div class="event">{v.eventName}</div>
 				{/each}
 			</div>
@@ -37,12 +41,12 @@
 		margin: 1px;
 	}
 
-  .event {
-    font-size: 8px;
-    background-color: purple;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 5px;
-    margin: 0.5px;
-  }
+	.event {
+    	font-size: 8px;
+    	background-color: purple;
+    	color: white;
+    	padding: 2px 5px;
+    	border-radius: 5px;
+    	margin: 0.5px;
+  	}
 </style>
