@@ -34,8 +34,8 @@
 	.calendar {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
-		grid-auto-rows: 60px;
-		min-height: 100vh;
+		/*grid-auto-rows: 60px;*/
+		min-height: 88vh;
 	}
 
 	.calendar > div {
