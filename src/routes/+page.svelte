@@ -3,6 +3,7 @@
 
 
 	let todos = $state([]);
+	let month = $state(8)
 
 	onMount(() => {
 		if(localStorage.getItem("todos")) {
@@ -10,6 +11,7 @@
 		}
 	})
 	let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+	const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 	
 </script>
 
@@ -19,7 +21,7 @@
 		{#each days as day}
 			<div>{day}</div>
 		{/each}
-		{#each new Array(31).fill(0) as day, i}
+		{#each new Array(months[month]).fill(0) as day, i}
 			<div>
 				{i + 1}
 				{#each todos.filter((v) => v.date.split('-')[2] == i + 1) as v, i}
@@ -28,6 +30,20 @@
 			</div>
 		{/each}
 	</div>
+	<div id="monthbuttons">
+		<button onclick={() => {
+			if(month == 0)
+				month = 11
+			else
+				month -= 1
+		}}>&lt;</button>
+		<button onclick={() => {
+			if(month == 0)
+				month = 11
+			else
+				month += 1
+		}}>&gt;</button>
+	</div>
 </div>
 
 <style>
@@ -35,7 +51,7 @@
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
 		/*grid-auto-rows: 60px;*/
-		min-height: 88vh;
+		min-height: 83vh;
 	}
 
 	.calendar > div {
@@ -44,11 +60,19 @@
 	}
 
 	.event {
-    	font-size: 8px;
-    	background-color: purple;
-    	color: white;
+    	font-size: 15px;
+    	background-color: rgb(88, 146, 212); 	
+		color: white;
     	padding: 2px 5px;
     	border-radius: 5px;
     	margin: 0.5px;
   	}
+	#monthbuttons {
+		display: flex; justify-content: space-around;
+	}
+	#monthbuttons * {
+		font-size: 2em;
+		border: 0px;
+		background-color: white;
+	}
 </style>

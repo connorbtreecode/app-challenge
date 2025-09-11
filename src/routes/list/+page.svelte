@@ -30,7 +30,6 @@
 				date: newTodoDate,
 				eventName: newTodoText
 			};
-			// setLocalStorageItem(todoItem)
 			todos.push(todoItem);
 			localStorage.setItem("todos", JSON.stringify(todos));
 			newTodoText = '';
