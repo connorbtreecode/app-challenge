@@ -93,4 +93,5 @@
 		padding: 4px;
 		border: 1px solid grey;
 	}
+	*{font-family: "Space Mono", monospace; }
 </style>
