@@ -21,7 +21,7 @@
 	<div class="month">{monthNames[month]}</div>
 	<div class="calendar">
 		{#each days as day}
-			<div>{day}</div>
+			<div style="display: flex; justify-content: center;">{day}</div>
 		{/each}
 		{#each new Array(months[month]).fill(0) as day, i}
 			<div>
@@ -52,8 +52,8 @@
 	.calendar {
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
-		/*grid-auto-rows: 60px;*/
-		min-height: 78vh;
+		grid-template-rows: repeat(6, 1fr);
+		height: 77vh;
 	}
 
 	.calendar > div {
@@ -81,6 +81,7 @@
 		font-size: 2em;
 		display: flex;
 		justify-content: center;
-		margin: 4px;
+		margin: 7px;
 	}
+	*{font-family: "Space Mono", monospace; }
 </style>

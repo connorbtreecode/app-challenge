@@ -36,4 +36,9 @@
 		margin: 0px; 
 		padding: 0px;
 	}
+	@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+	*{font-family: "Space Mono", monospace;
+  	font-weight: 400;
+  	font-style: normal;
+	}
 </style>
