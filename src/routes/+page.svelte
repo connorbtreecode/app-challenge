@@ -3,7 +3,7 @@
 
 
 	let todos = $state([]);
-	let month = $state(8)
+	let month = $state(new Date().getMonth());
 
 	onMount(() => {
 		if(localStorage.getItem("todos")) {
@@ -12,11 +12,13 @@
 	})
 	let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 	const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+	const monthNames = ["Janurary", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 	
 </script>
 
 <div>
 	<!-- calendar -->
+	<div class="month">{monthNames[month]}</div>
 	<div class="calendar">
 		{#each days as day}
 			<div>{day}</div>
@@ -38,8 +40,8 @@
 				month -= 1
 		}}>&lt;</button>
 		<button onclick={() => {
-			if(month == 0)
-				month = 11
+			if(month == 11)
+				month = 0
 			else
 				month += 1
 		}}>&gt;</button>
@@ -51,7 +53,7 @@
 		display: grid;
 		grid-template-columns: repeat(7, 1fr);
 		/*grid-auto-rows: 60px;*/
-		min-height: 83vh;
+		min-height: 78vh;
 	}
 
 	.calendar > div {
@@ -74,5 +76,11 @@
 		font-size: 2em;
 		border: 0px;
 		background-color: white;
+	}
+	.month {
+		font-size: 2em;
+		display: flex;
+		justify-content: center;
+		margin: 4px;
 	}
 </style>

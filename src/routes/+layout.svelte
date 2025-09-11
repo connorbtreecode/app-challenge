@@ -25,7 +25,7 @@
 		top: 0px;
 		right: 0px;
 		left: 0px;
-		height: 64px;
+		height: 55px;
 		align-items: center;
 	}
 	a{
