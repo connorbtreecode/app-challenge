@@ -8,13 +8,14 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<nav>
-	<a href="/">Calender</a>
-	<a href="/list">List</a>
-</nav>
+<div style="height: 100vh; display: flex; flex-direction: column;">
+	<nav>
+		<a href="/">Calendar</a>
+		<a href="/list">List</a>
+	</nav>
 
-{@render children?.()}
-
+	{@render children?.()}
+</div>
 <style>
 	nav{
 		background-color: grey;

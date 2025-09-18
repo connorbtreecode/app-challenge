@@ -63,7 +63,7 @@
 			{#each todos.filter(v => v.date === d) as v, i}
 				<div>
 					{v.eventName}
-					<button onclick={() => handleDelete(i)}>x</button>
+					<button onclick={() => handleDelete(index)}>x</button>
 				</div>
 			{/each}
 		</div>
@@ -86,7 +86,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 3px;
-		min-height: 10vh;
+		min-height: 7vh;
 	}
 	#listboxes > * {
 		background-color: lightgrey;
